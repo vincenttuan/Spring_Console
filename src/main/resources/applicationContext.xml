@@ -9,6 +9,16 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <bean id="hello" class="hello.spring.beans.HelloSpring" scope="singleton" />
+    <bean id="lotto" class="hello.spring.beans.LottoSpring" scope="singleton">
+        <constructor-arg value="50" index="0"/>
+    </bean>
+    <bean id="lotto2" class="hello.spring.beans.LottoSpring" scope="singleton">
+        <property name="count" value="10" />
+    </bean>
+    <bean id="lotto3" class="hello.spring.beans.LottoSpring" scope="singleton">
+        <constructor-arg value="2" name="a"/>
+        <constructor-arg value="3" name="b"/>
+    </bean>
     
 </beans>
 
