@@ -20,7 +20,55 @@
         <constructor-arg value="3" name="b"/>
     </bean>
     <bean id="lotto4" class="hello.spring.beans.LottoSpring" scope="singleton" 
-        init-method="init"
+          init-method="init"
     />
+    <bean id="fastfood" class="hello.spring.beans.Fastfood" scope="singleton">
+        <constructor-arg name="foodSet">
+            <set>
+                <value>apple</value>
+                <value>apple</value>
+                <value>banna</value>
+            </set>
+        </constructor-arg>
+    </bean>
+    <bean id="fastfood2" class="hello.spring.beans.Fastfood" scope="singleton">
+        <constructor-arg name="drinkList">
+            <list>
+                <value>apple</value>
+                <value>apple</value>
+                <value>banna</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="fastfood3" class="hello.spring.beans.Fastfood" scope="singleton">
+        <constructor-arg name="packageMap">
+            <map>
+                <entry key="A" value="apple" />
+                <entry key="B" value="banna" />
+            </map>
+        </constructor-arg>
+    </bean>
+    <bean id="fastfood4" class="hello.spring.beans.Fastfood" scope="singleton">
+        <constructor-arg name="foodSet">
+            <set>
+                <value>apple</value>
+                <value>apple</value>
+                <value>banna</value>
+            </set>
+        </constructor-arg>
+        <constructor-arg name="drinkList">
+            <list>
+                <value>apple</value>
+                <value>apple</value>
+                <value>banna</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="packageMap">
+            <map>
+                <entry key="A" value="apple" />
+                <entry key="B" value="banna" />
+            </map>
+        </constructor-arg>
+    </bean>
 </beans>
 

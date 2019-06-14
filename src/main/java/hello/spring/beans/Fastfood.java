@@ -20,7 +20,12 @@ public class Fastfood implements IFastfood{
     public Fastfood(Map packageMap) {
         this.packageMap = packageMap;
     }
-    
+
+    public Fastfood(Set foodSet, List drinkList, Map packageMap) {
+        this.foodSet = foodSet;
+        this.drinkList = drinkList;
+        this.packageMap = packageMap;
+    }
     
     @Override
     public void print() {
