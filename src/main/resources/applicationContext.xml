@@ -19,6 +19,8 @@
         <constructor-arg value="2" name="a"/>
         <constructor-arg value="3" name="b"/>
     </bean>
-    
+    <bean id="lotto4" class="hello.spring.beans.LottoSpring" scope="singleton" 
+        init-method="init"
+    />
 </beans>
 

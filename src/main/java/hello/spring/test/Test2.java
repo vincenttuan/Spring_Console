@@ -10,7 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class Test2 {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ILottoSpring lotto = (ILottoSpring)context.getBean("lotto3");
+        ILottoSpring lotto = (ILottoSpring)context.getBean("lotto4");
         //ILottoSpring lotto2 = (ILottoSpring)context.getBean("lotto2");
         lotto.print();
         //lotto2.print();

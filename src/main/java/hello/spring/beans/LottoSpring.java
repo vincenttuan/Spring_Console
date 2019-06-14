@@ -18,6 +18,9 @@ public class LottoSpring implements ILottoSpring{
         this.count = (int)Math.pow(a, b);
     }
     
+    public void init() {
+        this.count = 3;
+    }
 
     public void setCount(int count) {
         this.count = count;
