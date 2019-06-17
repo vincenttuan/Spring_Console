@@ -16,6 +16,9 @@
     -->
     <bean id="login" class="login.spring.beans.Login" autowire="byType" />
     
+    <bean id="stockDao" class="exchange.spring.beans.StockDao" />
+    <bean id="finance" class="exchange.spring.beans.Finance" autowire="byType" />
+    
     <bean id="hello" class="hello.spring.beans.HelloSpring" scope="singleton" />
     <bean id="lotto" class="hello.spring.beans.LottoSpring" scope="singleton">
         <constructor-arg value="50" index="0"/>

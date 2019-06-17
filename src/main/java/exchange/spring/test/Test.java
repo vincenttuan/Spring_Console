@@ -23,22 +23,5 @@ public class Test {
         double price = stock.getQuote().getPrice().doubleValue();
         System.out.println(price);
         System.out.println(price * money);
-        
-        Calendar from = Calendar.getInstance();
-        Calendar to = Calendar.getInstance();
-        from.add(Calendar.MONTH, -6); // from 6 month ago
-
-        Stock ex = YahooFinance.get("USDTWD=x");
-        List<HistoricalQuote> list = ex.getHistory(from, to, Interval.DAILY);
-        Collections.reverse(list);
-        for(HistoricalQuote quote : list) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            System.out.print(sdf.format(quote.getDate().getTime()) + "\t");
-            System.out.print(quote.getOpen() + "\t");
-            System.out.print(quote.getHigh()+ "\t");
-            System.out.print(quote.getLow()+ "\t");
-            System.out.println(quote.getClose());
-            
-        }
     }
 }
