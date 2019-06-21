@@ -8,7 +8,9 @@ public class Test {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_aop_advice.xml");
         IUserService userService = (IUserService)context.getBean("userService");
+        
         userService.update("vincent");
+        //userService.save();
     }    
 }
 
