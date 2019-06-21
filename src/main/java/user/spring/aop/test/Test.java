@@ -9,7 +9,7 @@ public class Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_aop_advice.xml");
         IUserService userService = (IUserService)context.getBean("userService");
         
-        userService.update("vincent");
+        userService.update("2330");
         //userService.save();
     }    
 }
