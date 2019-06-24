@@ -12,7 +12,7 @@ public class CRUD_2 {
         ApplicationContext context
                 = new ClassPathXmlApplicationContext("applicationContext_jdbc.xml");
         dao = (IBookDao) context.getBean("bookDao");
-        delete();
+        read();
     }
     
     public static void create() {
