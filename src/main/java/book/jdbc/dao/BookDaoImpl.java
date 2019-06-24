@@ -23,17 +23,31 @@ public class BookDaoImpl extends JdbcDaoSupport implements IBookDao  {
 
     @Override
     public void update(int id, String title, String author, int price) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "Update Book Set title=?, author=?, price=?, time=? " + 
+                     "Where id=?";
+        
+        Object[] args = {
+            title, 
+            author, 
+            price, 
+            new Date().getTime(),
+            id
+        };
+        
+        getJdbcTemplate().update(sql, args);
     }
 
     @Override
     public void delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "Delete From Book Where id=" + id;
+        getJdbcTemplate().execute(sql);
     }
 
     @Override
     public Map get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "Select id, title, author, price, time from Book Where id = " + id;
+        Map<String, Object> map = getJdbcTemplate().queryForMap(sql);
+        return map;
     }
 
     @Override
