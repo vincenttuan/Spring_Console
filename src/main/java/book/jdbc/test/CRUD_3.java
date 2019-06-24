@@ -19,6 +19,7 @@ public class CRUD_3 {
     public static void read() {
         List<Book> list = dao.query();
         out.println(list.size());
+        
         out.println(list);
     }
     
