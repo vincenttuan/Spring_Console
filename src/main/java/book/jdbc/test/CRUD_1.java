@@ -1,6 +1,7 @@
 package book.jdbc.test;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,13 @@ public class CRUD_1 {
         // 5：查詢資料
         sql = "Select id, title, author, price, time from Book";
         List<Map<String, Object>> list = jt.queryForList(sql);
-        System.out.println(list);
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd a hh:mm:ss E");
+        list.stream().forEach(e -> {
+            System.out.println(sdf.format(e.get("time")));
+        });
+        
+        sql = "SELECT author FROM SSH.BOOK WHERE id = ?";
+        String author = jt.queryForObject(sql, new Object[]{1}, String.class);
+        System.out.println(author);
     }
 }
