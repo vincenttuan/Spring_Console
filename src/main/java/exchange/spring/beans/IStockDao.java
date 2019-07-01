@@ -1,5 +1,7 @@
 package exchange.spring.beans;
 
-public interface IStockDao {
+import stock.orm.dao.IBaseDao;
+
+public interface IStockDao extends IBaseDao {
     double get(String symbol);
 }
