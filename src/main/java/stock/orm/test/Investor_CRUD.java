@@ -20,17 +20,17 @@ public class Investor_CRUD {
         fundDao = (IFundDao)context.getBean("fundDao");
     }
     public static void main(String[] args) {
-        add("Happy", 10000, 8, "A");
+        add("Lucky", 10000, "A");
 //        queryAll().stream()
 //                .forEach(e -> {
 //                    System.out.printf("%s %.0f %d %s\n", e.getName(), e.getUnits(), e.getNetValue(), e.getFund().getName());
 //                });
     }
     
-    public static void add(String investName, double units, int netValue, String fundName) {
+    public static void add(String investName, double units, String fundName) {
         Fund fund = fundDao.find(fundName);
         Investor inv = new Investor(investName);
-        inv.setNetValue(netValue);
+        inv.setNetValue(fund.getFundNet().getValue());
         inv.setUnits(units);
         inv.setFund(fund);
         investorDao.create(inv);
