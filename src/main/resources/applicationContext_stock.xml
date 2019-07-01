@@ -24,10 +24,9 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    <!--
+    
     <bean id="fundDao" class="stock.orm.dao.FundDao">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
-    -->
 </beans>
