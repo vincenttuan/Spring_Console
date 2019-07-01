@@ -17,11 +17,19 @@ public class Trader_CRUD {
         traderDao = (ITraderDao)context.getBean("traderDao");
     }
     public static void main(String[] args) {
-        
+        //add();
+        queryAll().stream()
+                .filter(e -> e.getName().length() >= 4)
+                .forEach(e -> System.out.println(e.getName()));
     }
     
     public static void add() {
-        
+        Trader t1 = new Trader("John");
+        Trader t2 = new Trader("Mary");
+        Trader t3 = new Trader("Tom");
+        traderDao.create(t1);
+        traderDao.create(t2);
+        traderDao.create(t3);
     }
     
     public static void update(int id, String name) {
@@ -29,7 +37,7 @@ public class Trader_CRUD {
     }
     
     public static List<Trader> queryAll() {
-        return null;
+        return traderDao.queryAll(Trader.class);
     }
     
 }
