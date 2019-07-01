@@ -16,16 +16,25 @@ public class Stock_CRUD {
     }
     public static void main(String[] args) {
         //add();
+        update("3008", "大立光");
         queryAll().stream().forEach(e -> System.out.println(e.getStockCode() + "\t" + e.getStockName()));
     }
     
     public static void add() {
-        Stock stock1 = new Stock("3008", "大立光");
+        Stock stock1 = new Stock("3008", "大力光");
         Stock stock2 = new Stock("2330", "台積電");
         Stock stock3 = new Stock("2303", "聯電");
         stockDao.create(stock1);
         stockDao.create(stock2);
         stockDao.create(stock3);
+    }
+    
+    public static void update(String stockCode, String stockName) {
+        Stock stock = stockDao.findByCode(stockCode);
+        if(stock != null) {
+            stock.setStockName(stockName);
+            stockDao.update(stock);
+        }
     }
     
     public static List<Stock> queryAll() {
