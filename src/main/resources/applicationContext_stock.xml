@@ -11,6 +11,7 @@
     
     <import resource="spring-Datasource.xml"/>
     
+    <!--
     <bean id="stockDao" class="stock.orm.dao.StockDao">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
@@ -26,5 +27,5 @@
     <bean id="investorDao" class="stock.orm.dao.InvestorDao">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-    
+    -->
 </beans>
