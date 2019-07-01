@@ -6,6 +6,13 @@ public class Investor {
     private Double units;
     private Integer netValue;
     private Fund fund;
+
+    public Investor() {
+    }
+
+    public Investor(String name) {
+        this.name = name;
+    }
     
     public Integer getInvestorId() {
         return investorId;

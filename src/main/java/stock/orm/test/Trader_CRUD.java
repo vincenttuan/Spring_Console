@@ -4,9 +4,7 @@ package stock.orm.test;
 import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import stock.orm.dao.IStockDao;
 import stock.orm.dao.ITraderDao;
-import stock.orm.model.Stock;
 import stock.orm.model.Trader;
 
 public class Trader_CRUD {
