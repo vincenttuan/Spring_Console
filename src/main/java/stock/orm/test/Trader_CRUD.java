@@ -32,10 +32,6 @@ public class Trader_CRUD {
         traderDao.create(t3);
     }
     
-    public static void update(int id, String name) {
-        
-    }
-    
     public static List<Trader> queryAll() {
         return traderDao.queryAll(Trader.class);
     }
